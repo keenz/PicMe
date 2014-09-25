@@ -12,5 +12,6 @@ namespace PicMe
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
