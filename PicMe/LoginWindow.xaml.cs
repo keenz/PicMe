@@ -20,14 +20,40 @@ namespace PicMe
     public partial class LoginWindow : Window, INotifyPropertyChanged
     {
         /// <summary>
-        /// UserName
+        /// User Name
         /// </summary>
-        public string UserName { get; set; }
+        private string _userName;
 
         /// <summary>
-        /// Error string
+        /// User Name
         /// </summary>
-        public string ErrorMsg { get; set; }
+        public string UserName
+        {
+            get { return _userName; }
+            set
+            {
+                _userName = value;
+                OnPropertyChanged("UserName");
+            }
+        }
+
+        /// <summary>
+        /// Error message
+        /// </summary>
+        private string _errorMsg;
+
+        /// <summary>
+        /// Error message
+        /// </summary>
+        public string ErrorMsg
+        {
+            get { return _errorMsg; }
+            set
+            {
+                _errorMsg = value;
+                OnPropertyChanged("ErrorMsg");    
+            }
+        }
 
         /// <summary>
         /// Designer
@@ -35,9 +61,8 @@ namespace PicMe
         public LoginWindow()
         {
             InitializeComponent();
-            _mainGrid.DataContext = this;
-            ErrorMsg = "No error";
-            //_lblError.Visibility = System.Windows.Visibility.Hidden;
+            MainGrid.DataContext = this;
+            TextBlock.Visibility = System.Windows.Visibility.Hidden;
         }
 
         /// <summary>
@@ -50,28 +75,25 @@ namespace PicMe
             if (String.IsNullOrEmpty(CtrlPassword.Password))
             {
                 ErrorMsg = "Password is empty.";
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("ErrorMsg"));
-                
-                _lblError.Visibility = System.Windows.Visibility.Visible;
+                TextBlock.Visibility = System.Windows.Visibility.Visible;
+                return;
             }
 
             if (String.IsNullOrEmpty(UserName))
             {
-                ErrorMsg = "Username is empty.";                
-                _lblError.Visibility = System.Windows.Visibility.Visible;
+                ErrorMsg = "Username is empty.";
+                TextBlock.Visibility = System.Windows.Visibility.Visible;
+                return;
             }
 
             if (!Auth(CtrlPassword.Password, UserName))
             {
-                UserName = "Your username or password was incorrect.";
                 ErrorMsg = "Your username or password was incorrect.";
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("ErrorMsg"));
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs("UserName"));
-                _lblError.Visibility = System.Windows.Visibility.Visible;
+                TextBlock.Visibility = System.Windows.Visibility.Visible;
+                return;
             }
+
+            // auth is done
         }
 
         /// <summary>

@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="LoginWindow" Height="244" Width="457" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" WindowStyle="None">
     <Border BorderBrush="Black" BorderThickness="1">
-        <Grid Name="_mainGrid" Margin="10">
+        <Grid Name="MainGrid" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Content="Username" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="109.993"/>
-            <TextBox Text="{Binding Path=UserName, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="124.993,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302.007"/>                
+            <TextBox Text="{Binding Path=UserName, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="124.993,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302.007"/>
             <Label Content="Password" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="109.993"/>
             <Button Name="_btnSignIn" Content="Sign in" HorizontalAlignment="Left" Margin="342,181.04,0,0" VerticalAlignment="Top" Width="85" Height="30.96" BorderBrush="#FF3D8B5F" Foreground="White" Click="OnBtnSignInClick">
                 <Button.Background>
@@ -19,8 +19,7 @@
                 </Button.Background>
             </Button>
             <PasswordBox Name="CtrlPassword" HorizontalAlignment="Left" Margin="124.993,111.96,0,0" VerticalAlignment="Top" Width="300.007" Height="23"/>
-            <Label Name="_lblError" Content="{Binding Path=Error, Mode=TwoWay}" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="32.96" Background="#FFF5F2F2" Foreground="#FFD31010" FontWeight="Bold" Width="435" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
-            <TextBlock Text="{Binding Path=ErrorMsg, Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" Height="26.04"/>
+            <TextBlock Height="34" Padding="7" Name="TextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Foreground="#FFA80F0F" Background="#FFD4CCCC" TextAlignment="Center" Text="{Binding Path=ErrorMsg, Mode=TwoWay}" FontWeight="Bold" Margin="0"/>
 
         </Grid>
     </Border>
