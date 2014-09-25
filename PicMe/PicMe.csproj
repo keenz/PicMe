@@ -53,6 +53,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="AccountControl.xaml.cs">
+      <DependentUpon>AccountControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PictureControl.xaml.cs">
+      <DependentUpon>PictureControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PostsControl.xaml.cs">
+      <DependentUpon>PostsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolbarControl.xaml.cs">
+      <DependentUpon>ToolbarControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AccountControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,6 +84,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PictureControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PostsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolbarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +120,22 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\HomeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Notifications.png" />
+    <Resource Include="Images\Popular.png" />
+    <Resource Include="Images\ProfileIcon.png" />
+    <Resource Include="Images\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TempImages\profile.jpg" />
+    <Resource Include="TempImages\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
