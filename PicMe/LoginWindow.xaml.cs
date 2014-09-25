@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -16,13 +17,8 @@ namespace PicMe
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class LoginWindow : Window, INotifyPropertyChanged
     {
-        /// <summary>
-        /// Password
-        /// </summary>
-        public string Password { get; set; }
-
         /// <summary>
         /// UserName
         /// </summary>
@@ -31,7 +27,7 @@ namespace PicMe
         /// <summary>
         /// Error string
         /// </summary>
-        public string Error { get; set; }
+        public string ErrorMsg { get; set; }
 
         /// <summary>
         /// Designer
@@ -40,7 +36,8 @@ namespace PicMe
         {
             InitializeComponent();
             _mainGrid.DataContext = this;
-            _lblError.Visibility = System.Windows.Visibility.Hidden;
+            ErrorMsg = "No error";
+            //_lblError.Visibility = System.Windows.Visibility.Hidden;
         }
 
         /// <summary>
@@ -50,21 +47,29 @@ namespace PicMe
         /// <param name="e"></param>
         private void OnBtnSignInClick(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(Password))
+            if (String.IsNullOrEmpty(CtrlPassword.Password))
             {
-                Error = "Password is empty.";
+                ErrorMsg = "Password is empty.";
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("ErrorMsg"));
+                
                 _lblError.Visibility = System.Windows.Visibility.Visible;
             }
 
             if (String.IsNullOrEmpty(UserName))
             {
-                Error = "Username is empty.";
+                ErrorMsg = "Username is empty.";                
                 _lblError.Visibility = System.Windows.Visibility.Visible;
             }
 
-            if (!Auth(Password, UserName))
+            if (!Auth(CtrlPassword.Password, UserName))
             {
-                Error = "Your username or password was incorrect.";
+                UserName = "Your username or password was incorrect.";
+                ErrorMsg = "Your username or password was incorrect.";
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("ErrorMsg"));
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs("UserName"));
                 _lblError.Visibility = System.Windows.Visibility.Visible;
             }
         }
@@ -79,6 +84,14 @@ namespace PicMe
         {
 
             return false;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
     }
 }

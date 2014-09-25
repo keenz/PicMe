@@ -23,5 +23,12 @@ namespace PicMe
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var wnd = new LoginWindow();
+            wnd.ShowDialog();
+
+        }
     }
 }

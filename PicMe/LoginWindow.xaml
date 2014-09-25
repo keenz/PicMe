@@ -18,8 +18,9 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <PasswordBox Password="111" HorizontalAlignment="Left" Margin="124.993,111.96,0,0" VerticalAlignment="Top" Width="300.007" Height="23"/>
-            <Label Name="_lblError" Content="{Binding Path=Error, Mode=TwoWay}" Visibility="Hidden" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="32.96" Background="#FFF5F2F2" Foreground="#FFD31010" FontWeight="Bold" Width="435" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+            <PasswordBox Name="CtrlPassword" HorizontalAlignment="Left" Margin="124.993,111.96,0,0" VerticalAlignment="Top" Width="300.007" Height="23"/>
+            <Label Name="_lblError" Content="{Binding Path=Error, Mode=TwoWay}" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="32.96" Background="#FFF5F2F2" Foreground="#FFD31010" FontWeight="Bold" Width="435" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+            <TextBlock Text="{Binding Path=ErrorMsg, Mode=TwoWay}" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" Height="26.04"/>
 
         </Grid>
     </Border>

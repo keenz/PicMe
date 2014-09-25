@@ -33,7 +33,7 @@
 
         </StackPanel>
 
-        <Button Grid.Column="1" Margin="0,5,5,5" Height="70" HorizontalAlignment="Right">
+        <Button Grid.Column="1" Margin="0,5,5,5" Height="70" HorizontalAlignment="Right" Click="Button_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="Images/HomeIcon.png" Width="64" Height="64" />
                 <TextBlock Foreground="Gray" Text="Log in" VerticalAlignment="Center" FontWeight="Bold" FontSize="36" Margin="0,0,10,0"/>
