@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="PicMe.AccountControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="160" d:DesignWidth="800">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="453"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="280"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Foreground="Gray" Content="slava" HorizontalAlignment="Left" Margin="139,37,0,0" VerticalAlignment="Top" Width="304" Height="36.96" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Hard working..." HorizontalAlignment="Left" Margin="139,72,0,0" VerticalAlignment="Top" Width="295.993" Height="25.96"/>
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Right" Height="65" Margin="0,95,10,0" VerticalAlignment="top" Width="254" CornerRadius="10">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="LightGray" Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Line Grid.Column="1"
+    X1="0" Y1="5"
+    X2="0" Y2="60"
+    Stroke="DarkGray"
+    StrokeThickness="2" />
+
+                <Line Grid.Column="2"
+    X1="0" Y1="5"
+    X2="0" Y2="60"
+    Stroke="DarkGray"
+    StrokeThickness="2" />
+
+                <Label Grid.Column="1" Foreground="Gray" Content="followers" HorizontalAlignment="Left" Height="27" Margin="0,25,0,0" VerticalAlignment="Top"  HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" Width="84"/>
+                <Label Grid.Column="0" Foreground="Gray" Content="posts" HorizontalAlignment="Left" Height="27"  Margin="0,25,0,0" VerticalAlignment="Top"  HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" Width="84"/>
+                <Label Grid.Column="2" Foreground="Gray" Content="following" HorizontalAlignment="Left" Height="27" Margin="0,25,0,0" VerticalAlignment="Top"  HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" Width="84"/>
+
+                <Label Grid.Column="0" Foreground="Gray" Content="12" HorizontalAlignment="Left" Height="27" Margin="0,5,0,0" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                <Label Grid.Column="1" Foreground="Gray" Content="12" HorizontalAlignment="Left" Height="27" Margin="0,5,0,0" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                <Label Grid.Column="2" Foreground="Gray" Content="12" HorizontalAlignment="Left" Height="27"  Margin="0,5,0,0" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="155" Margin="10,5,0,0" VerticalAlignment="Top" Width="124" CornerRadius="5">
+            <Grid>
+                <Border BorderBrush="LightGray" BorderThickness="1" HorizontalAlignment="Left" Height="110"  VerticalAlignment="Top" Width="110" Margin="6,6,0,0">
+                    <Image Source ="TempImages/profile.png" Stretch="Fill" />
+                </Border>
+                <Button Content="Edit Profile" HorizontalAlignment="Left" Height="28"  VerticalAlignment="Top" Width="110" Margin="6,121,0,0"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>
